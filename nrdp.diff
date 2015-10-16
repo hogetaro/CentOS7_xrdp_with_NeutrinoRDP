@@ -1,0 +1,16 @@
+diff --git a/channels/xrdpvr/xrdpvr_player.c b/channels/xrdpvr/xrdpvr_player.c
+index 294289c..1329614 100644
+--- a/channels/xrdpvr/xrdpvr_player.c
++++ b/channels/xrdpvr/xrdpvr_player.c
+@@ -166,9 +166,9 @@ static int display_picture(PLAYER_STATE_INFO *psi);
+ #define CODEC_TYPE_AUDIO AVMEDIA_TYPE_AUDIO
+ #endif
+ 
+-#if defined(DISTRO_DEBIAN7) || defined(DISTRO_UBUNTU1404)
++/*#if defined(DISTRO_DEBIAN7) || defined(DISTRO_UBUNTU1404)*/
+ #define SAMPLE_FMT_U8 AV_SAMPLE_FMT_U8
+-#endif
++/*#endif*/
+ 
+ void* init_context(int codec_id);
+ void destroy_cts(void*ctx);

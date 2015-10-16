@@ -1,0 +1,15 @@
+*** /etc/xrdp/xrdp.org	2015-10-16 16:18:45.298921812 -0400
+--- /etc/xrdp/xrdp.ini	2015-10-16 16:23:18.274061993 -0400
+***************
+*** 11,15 ****
+  # minimum security level allowed for client
+  # can be 'none', 'low', 'medium', 'high', 'fips'
+! crypt_level=high
+  # security layer can be 'tls', 'rdp' or 'negotiate'
+  # for client compatible layer
+--- 11,15 ----
+  # minimum security level allowed for client
+  # can be 'none', 'low', 'medium', 'high', 'fips'
+! crypt_level=none
+  # security layer can be 'tls', 'rdp' or 'negotiate'
+  # for client compatible layer
