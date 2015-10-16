@@ -15,8 +15,8 @@ fi
 export PATH="/usr/local/bin:$PATH"
 if [ ! -f ffmpeg.tbz ]; then
   # git clone git://source.ffmpeg.org/ffmpeg.git ffmpeg
-  # curl https://www.ffmpeg.org/releases/ffmpeg-1.2.12.tar.bz2 >ffmpeg.tbz
-  curl https://www.ffmpeg.org/releases/ffmpeg-2.0.7.tar.bz2 >ffmpeg.tbz
+  curl https://www.ffmpeg.org/releases/ffmpeg-1.2.12.tar.bz2 >ffmpeg.tbz
+  # curl https://www.ffmpeg.org/releases/ffmpeg-2.0.7.tar.bz2 >ffmpeg.tbz
 fi
 if [ ! -f /usr/local/lib/libavcodec.a ]; then
   rm -rf ffmpeg-*
@@ -38,6 +38,7 @@ if [ ! -f /usr/local/lib/libfreerdp-cache.so.1.0.1 ]; then
   patch -p1 < ../nrdp.diff
   cmake -DWITH_SSE2=ON
   make install
+  cd ..
 fi
 
 # for xrdp
@@ -47,7 +48,7 @@ fi
 
 if [ 1 = 1 ]; then
   cd xrdp
-  PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+  export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
   git checkout -- .
   ./bootstrap
   ./configure --enable-neutrinordp
